@@ -11,6 +11,7 @@ const ViewingRoom = (props: Room) => {
         <div>
             <h2>Viewing Room</h2>
             <VideoPlayer url={props.url} />
+            <h3>{props.name}</h3>
         </div>
     );
 }
