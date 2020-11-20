@@ -1,0 +1,11 @@
+.room-list-item {
+    display: flex;
+    padding: 0.25em 0.5em;
+    border: 1px solid #333;
+    margin: 0.25em 0;
+    text-align: left;
+}
+
+.room-list-item h3 {
+    flex-grow: 1;
+}

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
+import RoomListItem from '../../components/room-list-item/room-list-item';
 
-const mockData = {
-    roomList: [
+const listData = [
         {
             id: 'user1@gmail.com',
             roomName: 'cats, cats, cats',
@@ -27,39 +27,25 @@ const mockData = {
             roomName: 'Not The Future!',
             url: 'https://www.youtube.com/watch?v=k9tgLnI0fFc'
         }
-    ]
-};
-
-interface Rooms {
-    id: string;
-    roomName: string;
-    url: string
-}
+    ];
 
 const Lobby = () => {
-    const [ roomList ] = useState(mockData.roomList);
-
-    const list = null;
-
-    if (roomList) {
-        return (
-            <div>
-                {
-                    roomList.map((room, index) => {
-                        <RoomListItem 
-                            key={room.id}
-                            title={room.roomName}
-                            url={room.url} />
-                    })
-                }
-            </div>
-        )
-    }
+    const [ data ] = useState(listData);
 
     return (
         <div>
             <h1>Lobby</h1>
-            { list }
+            <div>
+            {
+                data.map((room) => {
+                    return (
+                        <RoomListItem 
+                            key={room.id}
+                            name={room.roomName} />
+                    );
+                })
+            }
+        </div>
         </div>
     );
 }

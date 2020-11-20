@@ -1,10 +1,11 @@
 import React from 'react';
+import './room-list-item.css';
 
-interface Room {
+interface RoomListItem {
     name: string;
 }
 
-const RoomListItem = (props: Room) => {
+const RoomListItem = (props: RoomListItem) => {
     const getCurrentRoomCount = (max: number) => {
         return Math.floor(Math.random() * Math.floor(max));
     }
@@ -13,7 +14,7 @@ const RoomListItem = (props: Room) => {
     const currentRoomCount: number = getCurrentRoomCount(totalRoomCount);
 
     return (
-        <div>
+        <div className="room-list-item">
             <h3>{props.name}</h3>
             <h4>{currentRoomCount}/{totalRoomCount}</h4>
         </div>
