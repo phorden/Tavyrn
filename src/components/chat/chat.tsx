@@ -33,7 +33,7 @@ const textSamples = [
 ];
 
 const Chat = () => {
-    const [chatList, setChatList]: any = useState([{name: 'bob', text: {id: 1, value: 'hello, world!'}}]);
+    const [chatList, setChatList]: any = useState([{user: 'bob', text: {id: 1, value: 'hello, world!'}}]);
 
     const simulateChat = () => {
         const chatPostDelay = Math.floor(Math.random() * Math.floor(5000));
