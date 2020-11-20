@@ -1,6 +1,5 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Tavyrn - The Youtube viewing party app
+Tavyrn allows multiple users to get together and watch Youtube videos and chat in realtime.
 
 ## Available Scripts
 
