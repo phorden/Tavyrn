@@ -2,6 +2,8 @@
     margin: 0 1em;
     border: 1px solid #333;
     flex-grow: 1;
+    max-height: 40em;
+    overflow: hidden;
 }
 
 .chat-container {
@@ -11,9 +13,10 @@
 
 .message-wrapper {
     display: flex;
-    padding: 1em 0.5em;
+    padding: 0 0.5em;
 }
 
-.message-wrapper h4 {
-    margin-right: 0.5em;
+.message-wrapper h4,
+.message-wrapper p {
+    margin: 0 0.5em 0.25em 0;
 }
