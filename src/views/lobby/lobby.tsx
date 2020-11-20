@@ -39,8 +39,28 @@ interface Rooms {
 const Lobby = () => {
     const [ roomList ] = useState(mockData.roomList);
 
+    const list = null;
+
+    if (roomList) {
+        return (
+            <div>
+                {
+                    roomList.map((room, index) => {
+                        <RoomListItem 
+                            key={room.id}
+                            title={room.roomName}
+                            url={room.url} />
+                    })
+                }
+            </div>
+        )
+    }
+
     return (
-        <h1>Lobby</h1>
+        <div>
+            <h1>Lobby</h1>
+            { list }
+        </div>
     );
 }
 
