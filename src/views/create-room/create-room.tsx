@@ -1,6 +1,6 @@
 import React from 'react';
 
-function CreateRoom() {
+const CreateRoom = () => {
     return (
         <h1>Create Viewing Room</h1>
     );

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function Lobby() {
+const Lobby = () => {
     return (
         <h1>Lobby</h1>
     );
