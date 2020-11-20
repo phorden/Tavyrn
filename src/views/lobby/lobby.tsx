@@ -1,16 +1,25 @@
-import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
 import RoomListItem from '../../components/room-list-item/room-list-item';
 
 interface Room {
     name: string;
     id: string;
     url: string;
-    goToRoom: Function;
 }
 
 const Lobby = (props: any) => {
-    const [ rooms ] = useState(props);
+    const [ rooms ] = useState(props.list);
+    const [activeRoom, setActiveRoom] = useState('');
+
+    useEffect(() => {
+        console.log("room id: ", activeRoom);
+        props.currentRoom(activeRoom);
+    });
+
+    const updateRoom = (event: Event, id: string) => {
+        event.preventDefault();
+        setActiveRoom(id);
+    }
 
     return (
         <div>
@@ -20,7 +29,7 @@ const Lobby = (props: any) => {
                 rooms.map((room: Room) => {
                     return (
                         <RoomListItem
-                            onClick={room.goToRoom(room)} 
+                            onClick={(e: Event) => updateRoom(e, room.id)} 
                             key={room.id}
                             name={room.name}
                             id={room.id} />

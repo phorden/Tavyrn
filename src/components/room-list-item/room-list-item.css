@@ -6,6 +6,10 @@
     text-align: left;
 }
 
+.room-list-item:hover {
+    cursor: pointer;
+}
+
 .room-list-item h3 {
     flex-grow: 1;
 }

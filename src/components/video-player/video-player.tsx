@@ -7,7 +7,7 @@ interface Video {
 
 const VideoPlayer = (props: Video) => {
     return (
-        <ReactPlayer url={props.url} />
+        <ReactPlayer url={props.url} controls={true} width="65%" height="40em" />
     );
 };
 

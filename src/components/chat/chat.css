@@ -1,0 +1,11 @@
+.chat-wrapper {
+    margin: 1em;
+    border: 1px solid #333;
+    flex-grow: 1;
+}
+
+.chat-container {
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll;
+}

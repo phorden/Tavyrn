@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link,
-  useHistory
+  Link
 } from 'react-router-dom';
 import './App.css';
 import Lobby from './views/lobby/lobby';
@@ -39,23 +38,24 @@ const listData = [
   }
 ];
 
-interface Room {
-  name: string;
-  id: string;
-  url: string;
-}
-
 const App = () => {
   const [roomList] = useState(listData);
-  const [currentRoomId, setCurrentRoomId] = useState('');
+  const [currentRoomId] = useState('');
   const [currentRoomName, setCurrentRoomName] = useState('');
   const [currentVideoUrl, setCurrentVideoUrl] = useState('');
 
-  const goToRoom = (room: Room) => {
-    setCurrentRoomId(room.id);
-    setCurrentRoomName(room.name);
-    setCurrentVideoUrl(room.url);
-  }
+  const updateRoomId = useCallback(
+    () => {
+      // event.preventDefault();
+      const activeRoom = roomList.find(room => room.id === currentRoomId);
+
+      if (activeRoom) {
+        setCurrentRoomName(activeRoom.name);
+        setCurrentVideoUrl(activeRoom.url);
+      }  
+    },
+    [roomList, currentRoomId]
+  )
 
   return (
     <Router>
@@ -77,7 +77,7 @@ const App = () => {
             <ViewingRoom name={currentRoomName} url={currentVideoUrl} />
           </Route>
           <Route path='/'>
-            <Lobby list={roomList} goToRoom={goToRoom}/>
+            <Lobby list={roomList} currentRoom={updateRoomId} />
           </Route>
         </Switch>
     
