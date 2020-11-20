@@ -13,22 +13,26 @@ const App = () => {
   return (
     <Router>
       <div className="App">
-        <header className="App-header">
-          <nav>
-            <Link to="/">Lobby</Link>
-            <Link to="/create-room">Create Viewing Room</Link>
-          </nav>
-        </header>
-      </div>
+        <div className="App-wrapper">
+          <header className="App-header">
+            <nav>
+              <Link to="/">Lobby</Link>
+              <Link to="/create-room">Create Viewing Room</Link>
+            </nav>
+          </header>
+        
 
-      <Switch>
-        <Route path='/create-room'>
-          <CreateRoom />
-        </Route>
-        <Route path='/'>
-          <Lobby />
-        </Route>
-      </Switch>
+        <Switch>
+          <Route path='/create-room'>
+            <CreateRoom />
+          </Route>
+          <Route path='/'>
+            <Lobby />
+          </Route>
+        </Switch>
+    
+        </div>
+      </div>
     </Router>
   );
 }
