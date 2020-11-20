@@ -55,6 +55,8 @@ const Chat = () => {
 
         setTimeout(() => {
             addMessageToList();
+
+
         }, chatPostDelay);
     };
 
